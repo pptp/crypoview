@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && webpack && nodemon ./dist/index.js",
+    "start": "npm run build && webpack && nodemon ./dist/server.js",
     "watch": "npm run clean && webpack -w",
     "build": "npm run clean && npm run lint && webpack",
     "lint": "tslint ./src/**/*.ts",

@@ -4,7 +4,8 @@ import { IController } from 'server/interfaces/IController';
 
 export abstract class AbstractController implements IController {
 
-  abstract get route();
+  route = null;
+  // abstract get route();
 
   public init() {
     //
