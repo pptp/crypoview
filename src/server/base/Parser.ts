@@ -19,7 +19,7 @@ export class Parser {
       console.log('Start save history');
 
       // show ANS and LTC just for test and do not save a lot of data in cloud db
-      const historySrc: IMarketHistoryCollection = await connector.history(['BTC-ANS', 'BTC-LTC']);
+      const historySrc: IMarketHistoryCollection = await connector.history(['BTC-NEO', 'BTC-LTC']);
       const history = {};
       Object.keys(historySrc).forEach((marketName) => {
         history[marketName] = historySrc[marketName].reduce((result: any, current: IMarketHistory) => {

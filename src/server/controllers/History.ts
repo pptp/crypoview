@@ -3,7 +3,7 @@ import { AbstractController } from 'server/base/AbstractController';
 import * as express from 'express';
 import { Controller } from 'server/base/decorators/Controller';
 
-@Controller('/coins')
+@Controller('/history/:market')
 export class CoinsController extends AbstractController {
 
   async get(
@@ -11,7 +11,7 @@ export class CoinsController extends AbstractController {
     res: express.Response,
     next: express.NextFunction
   ) {
-    const coins = await app.db.get('/coins');
-    res.send(coins);
+    const history = await app.db.get(`/stocks/bittrex/${req.params.market}`);
+    res.send(history);
   }
 }

@@ -12,4 +12,3 @@ export function Controller(route) {
     app.registerController(controller);
   };
 }
-
