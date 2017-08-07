@@ -1,7 +1,7 @@
-import { IDatabaseStrategy, IDatabaseStrategyConstructor } from 'server/interfaces/IDatabaseStrategy';
+import { IDatabaseAdapter, IDatabaseAdapterConstructor } from 'server/interfaces/IDatabaseAdapter';
 import * as firebase from 'firebase';
 
-export class FirebaseStrategy implements IDatabaseStrategy {
+export class FirebaseAdapter implements IDatabaseAdapter {
   static connectionType = 'firebase';
   protected db;
 

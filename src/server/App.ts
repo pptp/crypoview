@@ -3,7 +3,7 @@ import { IController } from './interfaces/IController';
 import { IRepository } from './interfaces/IRepository';
 // import * as firebase from 'firebase';
 import { DatabaseConnector } from 'server/base/DatabaseConnector';
-import { FirebaseStrategy } from 'server/base/db/FirebaseStrategy';
+import { FirebaseAdapter } from 'server/base/db/FirebaseAdapter';
 
 export class App {
   protected server;
@@ -12,7 +12,7 @@ export class App {
   constructor() {
     this.server = new Server();
 
-    this.db = DatabaseConnector.create(FirebaseStrategy);
+    this.db = DatabaseConnector.create(FirebaseAdapter);
   }
 
   bootstrap() {

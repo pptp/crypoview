@@ -1,13 +1,13 @@
 import { ApiConnector } from 'server/base/ApiConnector';
-import { BittrexStrategy } from 'server/base/api/BittrexStrategy';
+import { BittrexAdapter } from 'server/base/api/BittrexAdapter';
 import { Parser } from 'server/base/Parser';
 
 import { DatabaseConnector } from 'server/base/DatabaseConnector';
-import { FirebaseStrategy } from 'server/base/db/FirebaseStrategy';
+import { FirebaseAdapter } from 'server/base/db/FirebaseAdapter';
 
-const bittrexApi = ApiConnector.create(BittrexStrategy);
+const bittrexApi = ApiConnector.create(BittrexAdapter);
 
-const db = DatabaseConnector.create(FirebaseStrategy);
+const db = DatabaseConnector.create(FirebaseAdapter);
 
 const parser = new Parser(db);
 parser.execute(bittrexApi);

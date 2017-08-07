@@ -1,8 +1,8 @@
-import { IApiStrategy, IApiStrategyConstructor } from 'server/interfaces/IApiStrategy';
+import { IApiAdapter, IApiAdapterConstructor } from 'server/interfaces/IApiAdapter';
 import * as config from 'server/config';
 
 export class ApiConnector {
-  static create(strategyClass: IApiStrategyConstructor): IApiStrategy {
+  static create(strategyClass: IApiAdapterConstructor): IApiAdapter {
     const strategyConfiguration = config['apis'][strategyClass.stockName];
     if (!strategyConfiguration) {
       throw new Error(`Stock API '${strategyClass.stockName}' is not configurated`);

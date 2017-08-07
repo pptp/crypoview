@@ -1,13 +1,13 @@
 import * as moment from 'moment';
 
-import { IApiStrategy } from 'server/interfaces/IApiStrategy';
+import { IApiAdapter } from 'server/interfaces/IApiAdapter';
 import * as bittrex from 'node.bittrex.api';
 
 import { ICoin } from 'common/interfaces/ICoin';
 import { IMarket } from 'common/interfaces/IMarket';
 import { IMarketHistory, IMarketHistoryCollection } from 'common/interfaces/IMarketHistory';
 
-export class BittrexStrategy implements IApiStrategy {
+export class BittrexAdapter implements IApiAdapter {
   static stockName = 'bittrex';
 
   constructor(public name, protected configuration) {

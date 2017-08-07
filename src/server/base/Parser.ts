@@ -1,20 +1,20 @@
-import { IApiStrategy } from '../interfaces/IApiStrategy';
-import { IDatabaseStrategy } from 'server/interfaces/IDatabaseStrategy';
+import { IApiAdapter } from '../interfaces/IApiAdapter';
+import { IDatabaseAdapter } from 'server/interfaces/IDatabaseAdapter';
 
 import { ICoin } from 'common/interfaces/ICoin';
 import { IMarket } from 'common/interfaces/IMarket';
 import { IMarketHistoryCollection, IMarketHistory } from 'common/interfaces/IMarketHistory';
 
 export class Parser {
-  constructor(protected db: IDatabaseStrategy) {}
+  constructor(protected db: IDatabaseAdapter) {}
 
-  async execute(connector: IApiStrategy) {
+  async execute(connector: IApiAdapter) {
     await this.saveCoins(connector);
     await this.saveMarkets(connector);
     await this.saveHistory(connector);
   }
 
-  async saveHistory(connector: IApiStrategy) {
+  async saveHistory(connector: IApiAdapter) {
     try {
       console.log('Start save history');
 
@@ -66,7 +66,7 @@ export class Parser {
     }
   }
 
-  async saveMarkets(connector: IApiStrategy) {
+  async saveMarkets(connector: IApiAdapter) {
     try {
       console.log('Start save markets');
 
@@ -103,7 +103,7 @@ export class Parser {
     }
   }
 
-  async saveCoins(connector: IApiStrategy) {
+  async saveCoins(connector: IApiAdapter) {
     try {
       console.log('Start save coins');
 
